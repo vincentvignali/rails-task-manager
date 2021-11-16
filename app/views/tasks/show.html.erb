@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1>Detail of one task</h1>
+    <ul>
+      <li class = "list-group-item d-flex justify-content-between"><strong>Title :</strong> <%= @task.title %></li>
+      <li class = "list-group-item d-flex justify-content-between"><strong>Details :</strong> <%= @task.details %></li>
+      <li class = "list-group-item d-flex justify-content-between"><strong>Completed :</strong><%= @task.completed %></li>
+    </ul>
+
+  <%= link_to "Edit", edit_task_path, class:"btn btn-primary"%>
+  <%= link_to "Delete #{@task.title}",
+              task_path(@task),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-primary" %>
+  <%= link_to "Backlink", tasks_path, class:"btn btn-primary"%>
+<div>
